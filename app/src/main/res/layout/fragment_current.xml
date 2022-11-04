@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".CurrentStatus.CurrentFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/edit_text_shape"
+        android:layout_alignParentTop="true"
+        android:backgroundTint="@color/sky"
+        android:backgroundTintMode="screen"
+        android:id="@+id/searchBar"
+        android:orientation="horizontal">
+
+        <EditText
+            android:hint="Search Container"
+            android:layout_weight="1"
+            android:background="@null"
+            android:layout_marginLeft="10dp"
+            android:textSize="15dp"
+            android:id="@+id/searchET"
+            android:singleLine="true"
+            android:layout_marginRight="10dp"
+            android:inputType="textCapCharacters"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <ImageButton
+            android:id="@+id/searchImgBtn"
+            android:src="@drawable/ic_search"
+            android:background="@android:color/transparent"
+            android:layout_weight="6"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_below="@id/searchBar"
+        android:id="@+id/heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Current Status"
+        android:textColor="@color/sky"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:textAlignment="textEnd"
+        android:textSize="20dp"
+        android:gravity="end" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_below="@id/heading"
+        android:layout_width="match_parent"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        app:cardCornerRadius="10dp"
+        android:elevation="50dp"
+        android:layout_height="wrap_content">
+    <TableLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/filterLayout"
+        android:background="@color/skylApha">
+
+        <TableRow
+            android:layout_marginTop="10dp"
+            android:background="@color/white">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Branch : "
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center_vertical"
+            android:textSize="14dp" />
+
+        <Spinner
+            android:id="@+id/filterBranchSp"
+            android:textSize="10dp"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        </TableRow>
+
+        <TableRow android:layout_marginTop="10dp"
+            android:background="@color/white">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_height="wrap_content"
+                android:text="Location : "
+                android:layout_gravity="center_vertical"
+                android:textSize="14dp" />
+
+            <Spinner
+                android:id="@+id/filterLocSp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10dp"
+                android:layout_weight="1"/>
+
+        </TableRow>
+
+        <TableRow android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/white">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Line : "
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center_vertical"
+                android:textSize="14dp"/>
+
+            <Spinner
+                android:layout_weight="1"
+                android:id="@+id/filterLineSp"
+                android:textSize="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+    </TableLayout>
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomLayout"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/cardView">
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:background="@drawable/edit_text_shape"
+        android:backgroundTint="@color/skylApha"
+        android:backgroundTintMode="screen"
+        android:forceDarkAllowed="false"
+        android:layout_height="match_parent">
+
+        <TableRow android:background="@color/sky"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
+            <TextView
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:layout_marginLeft="1dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Branch" />
+            <TextView
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Location"/>
+            <TextView
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Line"/>
+            <TextView
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AI"/>
+            <TextView
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AP"/>
+            <TextView
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AR"/>
+            <TextView
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:layout_marginRight="1dp"
+                android:text="INV"/>
+        </TableRow>
+
+    </TableLayout>
+    </ScrollView>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="10dp"
+        android:id="@+id/bottomLayout"
+        android:background="@color/sky">
+    <TableRow android:background="@color/sky">
+        <TextView
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total ->" />
+
+        <TextView
+            android:id="@+id/totalAI"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AI : 0"/>
+        <TextView
+            android:id="@+id/totalAP"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AP : 0"/>
+        <TextView
+            android:id="@+id/totalAR"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AR : 0"/>
+        <TextView
+            android:id="@+id/totalINV"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:layout_marginRight="5dp"
+            android:text="Inventory : 0"/>
+    </TableRow>
+    </TableLayout>
+
+    <RelativeLayout
+        android:id="@+id/prgsbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:background="#7AFFFFFF">
+        <include
+            android:layout_centerInParent="true"
+            layout="@layout/progress_bar"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+    </RelativeLayout>
+
+</RelativeLayout>

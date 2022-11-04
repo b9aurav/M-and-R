@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Registration.RegistrationActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:textSize="35dp"
+        android:padding="10dp"
+        android:textAlignment="textEnd"
+        android:id="@+id/pageHeading"
+        android:background="@color/green"
+        android:textColor="@color/white"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_below="@id/pageHeading"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/greenAlpha"
+        android:id="@+id/userTypeheading"
+        android:text="User type : "/>
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/userTypeheading"
+        android:entries="@array/userType"
+        android:layout_margin="10dp"
+        android:id="@+id/userTypeSpinner"
+        android:padding="10dp"
+        android:background="@drawable/edit_text_shape"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userTypeSpinner"
+        android:textSize="18dp"
+        android:background="@color/greenAlpha"
+        android:padding="10dp"
+        android:id="@+id/branchheading"
+        android:text="Branch : "/>
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/branchheading"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:id="@+id/branchSpinner"
+        android:background="@drawable/edit_text_shape"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:id="@+id/inputLayout"
+                android:layout_below="@id/branchSpinner">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:background="@color/greenAlpha"
+        android:padding="10dp"
+        android:id="@+id/nameheading"
+        android:text="Name : "/>
+
+   <EditText
+       android:layout_width="match_parent"
+       android:layout_height="40dp"
+       android:id="@+id/nameEditText"
+       android:layout_below="@id/nameheading"
+       android:enabled="false"
+       android:singleLine="true"
+       android:background="@drawable/edit_text_shape"
+       android:padding="10dp"
+       android:layout_margin="10dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nameEditText"
+        android:background="@color/greenAlpha"
+        android:textSize="18dp"
+        android:padding="10dp"
+        android:id="@+id/phoneheading"
+        android:text="Phone no. : "/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/phoneLayout"
+        android:layout_below="@id/phoneheading">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:padding="10dp"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:foregroundGravity="center_vertical"
+        android:layout_toLeftOf="@id/phoneEditText"
+        android:layout_marginLeft="5dp"
+        android:id="@+id/cc"
+        android:text="+ 91"/>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/phoneEditText"
+        android:layout_toRightOf="@id/cc"
+        android:background="@drawable/edit_text_shape"
+        android:padding="10dp"
+        android:layout_gravity="center"
+        android:singleLine="true"
+        android:inputType="number"
+        android:enabled="false"
+        android:maxLength="10"
+        android:layout_margin="10dp" />
+
+    </LinearLayout>
+            </RelativeLayout>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/submitBtn"
+        android:text="Register"
+        android:layout_below="@id/inputLayout"
+        app:backgroundTint="@color/green"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_below="@id/submitBtn"
+                android:id="@+id/otpLayout"
+                android:visibility="invisible"
+                android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="18dp"
+                android:background="@color/greenAlpha"
+                android:padding="10dp"
+                android:id="@+id/otpheading"
+                android:text="OTP : "/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:id="@+id/otpEditText"
+                android:layout_below="@id/otpheading"
+                android:inputType="number"
+                android:maxLength="6"
+                android:background="@drawable/edit_text_shape"
+                android:padding="10dp"
+                android:layout_margin="10dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/verifyBtn"
+                android:text="   Verify   "
+                android:layout_below="@id/otpEditText"
+                app:backgroundTint="@color/green"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentRight="true"/>
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/prgsbar"
+        android:layout_width="match_parent"
+        android:visibility="invisible"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:background="#FFFFFF">
+        <include
+            android:layout_centerInParent="true"
+            layout="@layout/progress_bar"
+            android:id="@+id/prgicon"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/prgicon"
+            android:textAlignment="center"
+            android:id="@+id/prgsMsg"
+            android:layout_marginTop="50dp"
+            android:textSize="20dp"
+            android:text="" />
+
+        <com.jaredrummler.android.widget.AnimatedSvgView
+            android:id="@+id/animated_svg_view"
+            android:layout_width="95dp"
+            android:layout_height="63.75dp"
+            android:layout_below="@id/prgsMsg"
+            android:foregroundGravity="center"
+            android:layout_marginTop="35dp"
+            app:animatedSvgGlyphStrings="@array/svgPaths"
+            app:animatedSvgFillColors="@array/svgColors"
+            app:animatedSvgFillStart="1200"
+            app:animatedSvgFillTime="1000"
+            app:animatedSvgImageSizeX="400"
+            android:layout_centerHorizontal="true"
+            app:animatedSvgImageSizeY="400"
+            app:animatedSvgTraceTime="2000"
+            app:animatedSvgTraceTimePerGlyph="1000"/>
+    </RelativeLayout>
+
+</RelativeLayout>

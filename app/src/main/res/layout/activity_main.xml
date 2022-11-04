@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/activityLayout"
+    android:background="@color/skylApha"
+    tools:context=".Common.MainActivity">
+
+    <FrameLayout
+        android:id="@+id/billingFrame"
+        android:layout_width="match_parent"
+        android:visibility="invisible"
+        android:background="@color/greenAlpha"
+        android:layout_above="@id/navigationBar"
+        android:layout_height="match_parent"/>
+
+    <FrameLayout
+        android:id="@+id/currentStatusFrame"
+        android:background="@color/skylApha"
+        android:layout_width="match_parent"
+        android:layout_above="@id/navigationBar"
+        android:layout_height="match_parent"/>
+
+    <FrameLayout
+        android:id="@+id/miesFrame"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:background="@color/orangeAlpha"
+        android:layout_above="@id/navigationBar"
+        android:layout_height="match_parent"/>
+
+    <FrameLayout
+        android:id="@+id/permissionFrame"
+        android:layout_width="match_parent"
+        android:layout_above="@id/navigationBar"
+        android:layout_height="match_parent"/>
+
+    <com.ismaeldivita.chipnavigation.ChipNavigationBar
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_alignParentBottom="true"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:id="@+id/navigationBar"
+        android:background="@color/skylApha"
+        app:cnb_menuResource="@menu/bottom_menu"/>
+
+    <RelativeLayout
+        android:id="@+id/prgsbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:background="#7AFFFFFF">
+        <include
+            android:layout_centerInParent="true"
+            layout="@layout/progress_bar"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+    </RelativeLayout>
+
+</RelativeLayout>

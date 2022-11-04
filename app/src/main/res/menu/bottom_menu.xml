@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/billing"
+        android:title="Billing"
+        app:cnb_iconColor="@color/green"
+        android:icon="@drawable/ic_payments_black_24dp"/>
+
+    <item
+        android:id="@+id/currentStatus"
+        android:title="Status"
+        android:icon="@drawable/ic_status"
+        app:cnb_iconColor="@color/sky"/>
+
+    <item
+        android:id="@+id/mies"
+        android:title="M.I.S."
+        android:icon="@drawable/ic_mies"
+        app:cnb_iconColor="@color/orange"/>
+
+</menu>

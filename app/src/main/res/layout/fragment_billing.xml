@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Billing.BillingFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/edit_text_shape"
+        android:backgroundTint="@color/green"
+        android:backgroundTintMode="screen"
+        android:layout_alignParentTop="true"
+        android:id="@+id/searchBar"
+        android:orientation="horizontal">
+
+        <EditText
+            android:hint="Search Container"
+            android:layout_weight="1"
+            android:textSize="15dp"
+            android:layout_marginRight="10dp"
+            android:singleLine="true"
+            android:id="@+id/searchET"
+            android:layout_marginLeft="10dp"
+            android:inputType="textCapCharacters"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <ImageButton
+            android:id="@+id/searchImgBtn"
+            android:src="@drawable/ic_search"
+            android:background="@android:color/transparent"
+            android:layout_weight="6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_below="@id/searchBar"
+        android:id="@+id/heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Repaired Units"
+        android:textColor="@color/green"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:textAlignment="textEnd"
+        android:textSize="20dp"
+        android:gravity="end" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_below="@id/heading"
+        android:layout_width="match_parent"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        app:cardCornerRadius="10dp"
+        android:elevation="50dp"
+        android:layout_height="wrap_content">
+
+    <TableLayout
+        android:id="@+id/filterLayout"
+        android:layout_width="match_parent"
+        android:background="@color/greenAlpha"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/heading">
+
+        <TableRow android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="From : "
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:layout_gravity="center_vertical"
+                android:textSize="14dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:textColor="@color/white"
+                android:backgroundTint="@color/green"
+                android:id="@+id/fromDate"
+                android:textSize="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="To : "
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:layout_gravity="center_vertical"
+                android:textSize="14dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:textColor="@color/white"
+                android:backgroundTint="@color/green"
+                android:textSize="14dp"
+                android:id="@+id/toDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </TableRow>
+
+        <TableRow android:layout_marginTop="10dp">
+
+
+
+        </TableRow>
+    </TableLayout>
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomLayout"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/cardView">
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="match_parent"
+            android:background="@drawable/edit_text_shape"
+            android:backgroundTint="@color/greenAlpha"
+            android:backgroundTintMode="screen"
+            android:layout_height="match_parent">
+
+            <TableRow android:background="@color/green"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+                <TextView
+                    android:textColor="@color/white"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:layout_marginLeft="1dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Branch" />
+                <TextView
+                    android:textColor="@color/white"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Location"/>
+                <TextView
+                    android:textColor="@color/white"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Line"/>
+                <TextView
+                    android:textColor="@color/white"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Units"/>
+                <TextView
+                    android:textColor="@color/white"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:layout_marginRight="1dp"
+                    android:text="Amount"/>
+            </TableRow>
+
+        </TableLayout>
+    </ScrollView>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="10dp"
+        android:id="@+id/bottomLayout"
+        android:background="@color/green">
+        <TableRow android:background="@color/green">
+            <TextView
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:layout_marginLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Total ->" />
+
+            <TextView
+                android:id="@+id/totalUnits"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Units : 0"/>
+            <TextView
+                android:id="@+id/totalAmt"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Amount : 0"/>
+        </TableRow>
+    </TableLayout>
+
+    <RelativeLayout
+        android:id="@+id/prgsbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:background="#7AFFFFFF">
+        <include
+            android:layout_centerInParent="true"
+            layout="@layout/progress_bar"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+    </RelativeLayout>
+
+</RelativeLayout>
